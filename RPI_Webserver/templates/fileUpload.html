@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask File Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+        .menu-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffff;
+      color:#ffff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 65px; /* Adjust the size as needed */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+
+    }
+
+    .menu li {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bolder;
+      font-size: 13px;
+    }
+
+    .image-container {
+  display: flex;
+  margin: 20px 0px 0px 20px;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Set the gap between items */
+}
+    </style>
+    <script>
+         function showMessage(message) {
+            var popup = document.getElementById("popup");
+            popup.innerHTML = message;
+            popup.style.display = "block";
+            setTimeout(showMessage, 50000); // Adjust the timeout to 10 seconds (10000 milliseconds) or as needed
+        }
+
+        function changeBackgroundImage() {
+            var body = document.body;
+            var images = [
+                'https://source.unsplash.com/1600x900/?office',
+                'https://source.unsplash.com/1600x900/?workspace',
+                'https://source.unsplash.com/1600x900/?technology'
+                // Add more image URLs as needed
+            ];
+
+            var randomIndex = Math.floor(Math.random() * images.length);
+            body.style.backgroundImage = 'url("' + images[randomIndex] + '")';
+        }
+
+        // Call the function on page load
+        window.onload = changeBackgroundImage;
+    </script>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="logo">
+          <!-- Place your shop logos here -->
+          <img src="https://i.pinimg.com/originals/dd/97/5c/dd975c4d4ebf677efa482f6d3b124f19.png" alt="Shop 1 Logo">
+       
+    
+        <ul class="menu">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/uploadfile">XEROX</a></li>
+          <li><a href="/aboutus">ABOUT</a></li>
+        </ul>
+        </div>
+      </div>
+    <header>
+        <h1>File Upload</h1>
+    </header>
+    <div id="content">
+        <form method="post" enctype="multipart/form-data" onsubmit="showMessage('File uploaded successfully!'); return true;">
+            <input type="file" name="file" accept=".txt, .jpg, .png">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <div id="popup" class="popup"></div>
+</body>
+</html>

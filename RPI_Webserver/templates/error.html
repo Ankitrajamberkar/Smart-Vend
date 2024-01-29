@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #E8FFFF, #FFE8E8);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 400px; /* Adjust the size as needed */
+            height: 300px;
+            margin-bottom: 10px; /* Add margin at the bottom to create space between image and text */
+        }
+
+        h1 {
+            color: #e74c3c;
+            /* Red color for emphasis on error */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src='https://img.freepik.com/free-vector/hacker-activity-illustration-design_23-2148543865.jpg?w=1060&t=st=1700182672~exp=1700183272~hmac=0ff36adbaf6476b86e724e139bdbe20a32dc10e0be949b93be2b6a9ed0fdcd90'
+            alt="error image">
+        <h1>Oops! Something went wrong.</h1>
+        <p>An unexpected error occurred. Please try again later.</p>
+        <p>Error details: {{ error }}</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-nyyEEvF2v+BzcCPT+WA5H8LBCuMavNm4IuDQR1/RnDTGweU+ccqcuR2a2s/ZWc+5nEVG1D+Ebu9gEfD/64t1pw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://source.unsplash.com/1600x900/?snacks');
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff; /* Set text color to white for better contrast */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu a i {
+            margin-right: 10px;
+        }
+
+        .menu a:hover {
+            background-color: #2074a0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Our Shop</h1>
+        <p>Discover a variety of delicious snacks and convenient Xerox services.</p>
+        <div class="menu">
+            <a href="/ordersnacks"><i class="fas fa-utensils"></i> Order Snacks</a>
+            <a href="/uploadfile"><i class="fas fa-file-upload"></i> Upload File for Xerox</a>
+            <a href="/aboutus"><i class="fas fa-info-circle"></i> About Us</a>
+        </div>
+    </div>
+</body>
+
+</html>
